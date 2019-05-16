@@ -10,5 +10,9 @@
       "ios": "3.0.0",
       "android": "3.0.0"
     }
+  },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/dieyne/nativescript-wifi-settings.git"
   }
 }
