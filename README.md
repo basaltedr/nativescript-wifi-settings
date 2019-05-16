@@ -5,7 +5,7 @@ Wifi settings is a nativescript plugin it allow user to open wifi setting in And
 ## Installation
 
 ```bash
-npm  install nativescript-wifi-settings
+tns plugin add nativescript-wifi-settings
 ```
 
 ## Usage
