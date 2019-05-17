@@ -22,6 +22,15 @@ wifiSettings.openWifiSettingsOnDevice();
 wifiSettings.openBluetoothSettingsOnDevice();
 ```
 
+## example
+
+```bash
+cd example
+npm install
+tns run android
+tns run ios
+```
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
