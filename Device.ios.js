@@ -31,4 +31,29 @@ module.exports = {
 
     return false;
   },
+  openBluetoothSettingsOnDevice: function() {
+    var uris = [
+      "Prefs:root=General&path=Bluetooth",
+      "App-prefs:root=General&path=Bluetooth",
+      "Prefs:root=Bluetooth",
+      "App-prefs:root=Bluetooth",
+    ];
+    for (var i = 0; i < uris.length; i++) {
+      if (openUri(uris[i])) {
+        return true;
+      }
+    }
+
+    return false;
+  },
+  openGeneralSettingsOnDevice: function() {
+    var uris = ["Prefs:root=General", "App-prefs:root=General"];
+    for (var i = 0; i < uris.length; i++) {
+      if (openUri(uris[i])) {
+        return true;
+      }
+    }
+
+    return false;
+  },
 };

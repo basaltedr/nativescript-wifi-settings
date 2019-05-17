@@ -1,19 +1,25 @@
-# Wifi settings
+# App settings
 
-Wifi settings is a nativescript plugin it allow user to open wifi setting in Android and Ios .
+App settings is a nativescript plugin it allow user to open setting in Android and Ios .
 
 ## Installation
 
 ```bash
-tns plugin add nativescript-wifi-settings
+tns plugin add nativescript-app-settings
 ```
 
 ## Usage
 
 ```javascript
-const wifiSettings = require("nativescript-wifi-settings");
+const wifiSettings = require("nativescript-app-settings");
+// open general settings
+wifiSettings.openGeneralSettingsOnDevice();
 
+// open wifi settings
 wifiSettings.openWifiSettingsOnDevice();
+
+// open bluetooth settings
+wifiSettings.openBluetoothSettingsOnDevice();
 ```
 
 ## Contributing

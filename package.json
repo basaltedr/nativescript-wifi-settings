@@ -1,10 +1,10 @@
 {
-  "name": "nativescript-wifi-settings",
+  "name": "nativescript-app-settings",
   "author": {
     "name": "dieyné boudal dramé",
     "email": "drame.d@sfeir.com"
   },
-  "version": "1.1.1",
+  "version": "1.0.0",
   "nativescript": {
     "platforms": {
       "ios": "3.0.0",

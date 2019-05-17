@@ -38,4 +38,32 @@ module.exports = {
     ctx.startActivity(intent);
     return true;
   },
+  openBluetoothSettingsOnDevice: function() {
+    var ctx = getAppContext();
+    if (TypeUtils.isNullOrUndefined(ctx)) {
+      return false;
+    }
+
+    var intent = new android.content.Intent(
+      android.provider.Settings.ACTION_BLUETOOTH_SETTINGS,
+    );
+    intent.addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK);
+
+    ctx.startActivity(intent);
+    return true;
+  },
+  openGeneralSettingsOnDevice: function() {
+    var ctx = getAppContext();
+    if (TypeUtils.isNullOrUndefined(ctx)) {
+      return false;
+    }
+
+    var intent = new android.content.Intent(
+      android.provider.Settings.ACTION_SETTINGS,
+    );
+    intent.addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK);
+
+    ctx.startActivity(intent);
+    return true;
+  },
 };
