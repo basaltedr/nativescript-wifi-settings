@@ -1,5 +1,5 @@
-var Application = require("application");
-var TypeUtils = require("utils/types");
+var Application = require("@nativescript/core/application");
+var TypeUtils = require("@nativescript/core");
 
 function getAppContext() {
   return Application.ios.delegate;
