@@ -1,34 +1,31 @@
-var Application = require("@nativescript/core/application");
-var TypeUtils = require("@nativescript/core");
+import * as application from "@nativescript/core"
 
 function getAppContext() {
-  return Application.ios.delegate;
+	return application.ios.delegate;
 }
 exports.getAppContext = getAppContext;
 
 function getAppView() {
-  return Application.ios.rootController;
+	return application.ios.rootController;
 }
 exports.getAppView = getAppView;
 function openUri(uri) {
-  var u = NSURL.URLWithString(uri);
+	var u = NSURL.URLWithString(uri);
 
-  if (UIApplication.sharedApplication.canOpenURL(u)) {
-    return UIApplication.sharedApplication.openURL(u);
-  }
+	if (UIApplication.sharedApplication.canOpenURL(u)) {
+		return UIApplication.sharedApplication.openURL(u);
+	}
 
-  return false;
+	return false;
 }
 exports.openUri = openUri;
-module.exports = {
-  openWifiSettingsOnDevice: function() {
-    var uris = ["prefs:root=WIFI", "App-Prefs:root=WIFI"];
-    for (var i = 0; i < uris.length; i++) {
-      if (openUri(uris[i])) {
-        return true;
-      }
-    }
+export function openWifiSettingsOnDevice() {
+	var uris = ["prefs:root=WIFI", "App-Prefs:root=WIFI"];
+	for (var i = 0; i < uris.length; i++) {
+		if (openUri(uris[i])) {
+			return true;
+		}
+	}
 
-    return false;
-  },
+	return false;
 };
