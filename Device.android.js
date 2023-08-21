@@ -1,21 +1,21 @@
-var Application = require("@nativescript/core/application");
-var TypeUtils = require("@nativescript/core");
-function getAppContext() {
-  var ctx = Application.android.context;
+import * as application from "@nativescript/core"
 
-  if (TypeUtils.isNullOrUndefined(ctx)) {
+function getAppContext() {
+  var ctx = application.android.context;
+
+  if (ctx==null) {
     ctx = java.lang.Class.forName("android.app.AppGlobals")
       .getMethod("getInitialApplication", null)
       .invoke(null, null);
   }
 
-  if (TypeUtils.isNullOrUndefined(ctx)) {
+  if (ctx==null) {
     ctx = java.lang.Class.forName("android.app.ActivityThread")
       .getMethod("currentApplication", null)
       .invoke(null, null);
   }
 
-  if (!TypeUtils.isNullOrUndefined(ctx)) {
+  if (ctx!==null) {
     ctx = ctx.getApplicationContext();
   } else {
     ctx = undefined;
@@ -26,7 +26,7 @@ function getAppContext() {
 module.exports = {
   openWifiSettingsOnDevice: function() {
     var ctx = getAppContext();
-    if (TypeUtils.isNullOrUndefined(ctx)) {
+    if (ctx==null) {
       return false;
     }
 

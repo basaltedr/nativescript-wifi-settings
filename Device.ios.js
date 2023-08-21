@@ -1,13 +1,12 @@
-var Application = require("@nativescript/core/application");
-var TypeUtils = require("@nativescript/core");
+import * as application from "@nativescript/core"
 
 function getAppContext() {
-  return Application.ios.delegate;
+  return application.ios.delegate;
 }
 exports.getAppContext = getAppContext;
 
 function getAppView() {
-  return Application.ios.rootController;
+  return application.ios.rootController;
 }
 exports.getAppView = getAppView;
 function openUri(uri) {
